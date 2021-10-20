@@ -13,6 +13,10 @@
 
 require __DIR__ . '/../vendor/autoload.php';
 
+function fail($lineNumber) {
+	exit('Error on line ' . $lineNumber);
+}
+
 (\Delight\Base64\Base64::encode('Gallia est omnis divisa in partes tres') === 'R2FsbGlhIGVzdCBvbW5pcyBkaXZpc2EgaW4gcGFydGVzIHRyZXM=') or exit('Failed on line ' . __LINE__);
 (\Delight\Base64\Base64::decode('R2FsbGlhIGVzdCBvbW5pcyBkaXZpc2EgaW4gcGFydGVzIHRyZXM=') === 'Gallia est omnis divisa in partes tres') or exit('Failed on line ' . __LINE__);
 (\Delight\Base64\Base64::encodeUrlSafe('πάντα χωρεῖ καὶ οὐδὲν μένει …') === 'z4DOrM69z4TOsSDPh8-Jz4HOteG_liDOus6x4b22IM6_4b2QzrThvbLOvSDOvM6tzr3Otc65IOKApg~~') or exit('Failed on line ' . __LINE__);
