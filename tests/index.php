@@ -6,10 +6,10 @@
  * Licensed under the MIT License (https://opensource.org/licenses/MIT)
  */
 
-\error_reporting(E_ALL);
+\error_reporting(\E_ALL);
 \ini_set('display_errors', 'stdout');
 
-\header('Content-type: text/plain; charset=utf-8');
+\header('Content-Type: text/plain; charset=utf-8');
 
 require __DIR__ . '/../vendor/autoload.php';
 
@@ -30,5 +30,4 @@ for ($i = 0; $i < 1000; $i++) {
 	(\Delight\Base64\Base64::decodeUrlSafeWithoutPadding(\Delight\Base64\Base64::encodeUrlSafeWithoutPadding($data)) === $data) or exit('Failed on line ' . __LINE__);
 }
 
-echo 'ALL TESTS PASSED';
-echo "\n";
+echo 'ALL TESTS PASSED' . "\n";
